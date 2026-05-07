@@ -68,7 +68,7 @@ Amazon Bedrock AgentCore Payments는 AI agent가 자율적으로 결제(microtra
                           │
                           ▼
 ┌───────────────────────────────────────────────────────────┐
-│  Base 네트워크 USDC 정산 (~200ms, 트랜잭션당 1센트 미만)           │
+│  Base 네트워크 USDC 정산 (~200ms, 트랜잭션당 1센트 미만)          │
 └───────────────────────────────────────────────────────────┘
 ```
 
@@ -86,31 +86,31 @@ Amazon Bedrock AgentCore Payments는 AI agent가 자율적으로 결제(microtra
 
 핵심 보안 기능은 아래와 같습니다.
 
-- 개인 키 미노출: agent는 private key에 직접 접근 불가
-- 예산 가드레일: 세션별 `maxSpendAmount` 및 만료 시간 설정
-- 명시적 사용자 승인: 사용자가 지갑 사용을 승인해야 agent가 결제 가능
-- 컴플라이언스 내장: Coinbase CDP Facilitator가 제재 및 불법 자금 리스크 관리
-- 자동 롤백: 결제 서명 실패 시 차감된 금액 자동 복구
-- 관찰성: CloudWatch 연동 로그, 메트릭, 대시보드 제공
+- 개인 키 미노출: agent는 private key에 직접 접근 불가합니다.
+- 예산 가드레일: 세션별 `maxSpendAmount` 및 만료 시간 설정이 가능합니다.
+- 명시적 사용자 승인: 사용자가 지갑 사용을 승인해야 agent가 결제 가능합니다.
+- 컴플라이언스 내장: Coinbase CDP Facilitator가 제재 및 불법 자금 리스크 관리합니다.
+- 자동 롤백: 결제 서명 실패 시 차감된 금액 자동 복구합니다.
+- 관찰성: CloudWatch 연동 로그, 메트릭, 대시보드를 제공합니다.
 
 
 ## 통합 방식
 
-- AgentCore SDK 또는 Strands SDK를 통한 간편한 통합
-- Browser Tool (Playwright) 연동: agent가 브라우저를 통해 x402 유료 콘텐츠 접근
-- 표준 HTTP 호출 연동 지원
-- AgentCore Gateway와 연결된 Coinbase MCP를 통해 Exa, Messari, Browserbase 등 10,000+ x402 서비스에 접근
+- AgentCore SDK 또는 Strands SDK를 통한 간편한 통합이 가능합니다.
+- Browser Tool (Playwright) 연동: agent가 브라우저를 통해 x402 유료 콘텐츠 접근합니다.
+- 표준 HTTP 호출 연동 지원합니다.
+- AgentCore Gateway와 연결된 Coinbase MCP를 통해 Exa, Messari, Browserbase 등 10,000+ x402 서비스에 접근할 수 있습니다.
 
 ---
 
 ## 가격 (Pricing)
 
-- Consumption-based pricing (사용량 기반)
-- 최소 약정 및 선불 비용 없음
-- AgentCore Runtime 참고 가격:
+- Consumption-based pricing (사용량 기반)에 따라 과금합니다.
+- 최소 약정 및 선불 비용 없습니다.
+- AgentCore Runtime 참고 가격은 아래를 참고합니다.
   - CPU: `$0.0895` per vCPU-hour
   - Memory: `$0.00945` per GB-hour (최소 128 MB)
-- AgentCore Gateway: `$0.005` per 1,000 API 호출
+- AgentCore Gateway: 1,000 API 호출당 `$0.005`
 
 > 자세한 내용은 [AgentCore Pricing 페이지](https://aws.amazon.com/bedrock/agentcore/pricing/) 참고하세요.
 
